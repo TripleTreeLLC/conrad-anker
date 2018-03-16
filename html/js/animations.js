@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>{% block pageTitle %}{% endblock %} | Conrad Anker</title>
-		<link rel="stylesheet" href="/css/styles.css" type="text/css">
-		<link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.typekit.net/elp6ayx.css">
 
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js"</script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-		<script type="text/javascript">
-
-			function initialzieContactPanel() {
+			function initializeContactPanel() {
 				$("#contact-link").click(function() {
 					var currWidth = $(".contact-slide").width();
 
@@ -29,19 +15,42 @@
 			function initializePanelClicks() {
 				$(".engage-row").click(function() {
 					$("#explore").animate({width: "0%"}, 500);
-					$(".resize-bottom-explore").animate({width: "0%"}, 500);
+					$(".resize-bottom-explore").css({position: 'absolute'});
+					$(".resize-bottom-explore").animate({width: "0"}, 500);
+					$(".explore-text .redl-active").css({width: '0.5em !important'}, 500);
 					$(".explore-row").fadeOut();
 					$("#engage").animate({width: "100%"}, 500, function() {
 						$("#explore").css({height: "0"});
 						$("#explore").hide();
 						$(".exploreSection").hide();
 						$(".engageSection").show();
+						$("body").css({position: "static"});
+						$("body").css({top: "0px"});
+						$("body").css({height: "0px"});
 						$("body").css("overflow-y", "scroll");
 					});
 
 					$("#engage-rot-text").fadeIn();
 					$(".engage-row .redl").addClass("redl-active");
 					$("#engage").css({"background-image": "url('/img/right-background.jpg')"});
+				});
+
+				$("#explore-mobile-click").click(function() {
+					
+					$("#explore-rot-text-mobile").fadeIn();
+					$("#engage-mobile-click .redl").addClass("redl-active");
+					$("#engage-mobile-row").animate({height: "0%"}, 500);
+					$("#engage-mobile .redl").fadeOut();
+					$("#engage-mobile .explore-text").fadeOut(); 
+					$("#explore-mobile-row").animate({height: "100%"}, 500, function() {
+						$(".engageSection").hide();
+						$(".exploreSection").show();
+						
+						$("body").css({position: "static"});
+						$("body").css("overflow-y", "scroll");
+					});
+					$("#explore-mobile").css({"background-image": "url('/img/left-background.jpg')"});
+
 				});
 
 				$(".explore-row").click(function() {
@@ -52,7 +61,8 @@
 						$("#engage").css({height: "0"});
 						$("#engage").hide();
 						$(".engageSection").hide();
-						$(".exploreSection").show();
+            $(".exploreSection").show();
+						$("body").css({position: "static"});
 						$("body").css("overflow-y", "scroll");
 					});
 
@@ -70,8 +80,8 @@
 
 				var currCircle = $(".circle-active");
 				currCircle.removeClass("circle-active");
-			}
-
+      }
+      
 			function stickyOutline() {
 				var topOffset = $(".outline-contain").offset().top;
 				$(window).on("scroll", function() {
@@ -113,7 +123,8 @@
 						$("#achievements-outline .outline-item-text").addClass("oi-active-dark");
 					}
 				});
-			}
+      }
+
 
 			function initHistorySection() {
 				$(".history-menu-item").click(function() {
@@ -215,7 +226,7 @@
 
 			$(document).ready(function() {
 				initializePanelClicks();
-				initialzieContactPanel();
+				initializeContactPanel();
 				stickyOutline();
 				initHistorySection();
 				initPressScroller();
@@ -225,12 +236,3 @@
 				    $(window).scrollTop(0);
 				});
 			});
-		</script>
-	</head>
-
-	<body>
-		{% block main %}
-		 
-		{% endblock %}
-	</body>
-</html>

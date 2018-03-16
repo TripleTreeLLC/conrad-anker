@@ -307,7 +307,7 @@
 
 body{
 	font-family: 'proxima-nova', sans-serif;
-	position:fixed;
+	position:absolute;
 	overflow-x: hidden;
 	overflow-y: hidden;
 	width:101%;
