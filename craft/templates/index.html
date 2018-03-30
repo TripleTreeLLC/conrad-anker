@@ -35,13 +35,13 @@
 
   <div class="row nav-container remove-15-row">
     <div class="col social-container">
-      <a href="https://www.instagram.com/conrad_anker/" target="_blank">
+      <a style="text-decoration: none !important;" href="https://www.instagram.com/conrad_anker/" target="_blank">
         <img src="img/social_instagram.png">
       </a>
-      <a href="https://twitter.com/conradanker" target="_blank">
+      <a style="text-decoration: none !important;" href="https://twitter.com/conradanker" target="_blank">
         <img src="img/social_twitter.png">
       </a>
-      <a href="https://www.facebook.com/ConradAnkerOfficial/" target="_blank">
+      <a style="text-decoration: none !important;" href="https://www.facebook.com/ConradAnkerOfficial/" target="_blank">
         <img src="img/social_facebook.png">
       </a>
 
@@ -172,16 +172,16 @@
 
       <h1 class="contact-title" style="margin-bottom:1.2em;">Contact</h1>
 
-      <ul>
-        <li>Speaking Engagement</li>
-        <li>Endorsement</li>
-        <li>General Inquiry</li>
+      <ul class="contact-list">
+        <li class="contact-option" id="co0">Speaking Engagement</li>
+        <li class="contact-option" id="co1">Endorsement</li>
+        <li class="contact-option" id="co2">General Inquiry</li>
       </ul>
 
       <form id="contact-form">
         <input type="text" name="email" id="contact-email" placeholder="Your email" />
         <input type="text" name="subject" id="contact-subject" placeholder="Subject" />
-        <textarea name="message" class="message-box"></textarea>
+        <textarea name="message" class="message-box" placeholder="Message"></textarea>
       </form>
 
       <input type="submit" id="contact-submit" value="SEND" />
@@ -224,7 +224,7 @@
 
   <div class="row content-2 exploreSection" id="row1">
     <div class="col-sm-2 remove-15-row remove-15-padding float-redline">
-      <div class="col-sm-2 remove-15-row remove-15-padding redl2"></div>
+      <div class="col-sm-2 remove-15-row remove-15-padding redl2 heightfix-redl2"></div>
     </div>
 
     <div class="col-sm-2">
@@ -268,7 +268,7 @@
       {{entry.findAlpineAdventureBodyCopy}}
 
       <p>
-        <a target="_blank" href="#" class="red-arrow-link dl-bio">DOWNLOAD FULL CONRAD BIO &rarr;</a>
+        <a target="_blank" href="#" class="red-arrow-link dl-bio">CONRAD'S FULL BIO &rarr;</a>
       </p>
     </div>
   </div>
@@ -281,7 +281,7 @@
     <div class="col-sm-10 content-buffer-mobile">
       <div class="row">
         <div class="col">
-          <img src="img/achievements1.jpeg" class="achievements-1 remove-mobile">
+          <img src="img/conrad_quote_explore.jpg" class="achievements-1 remove-mobile">
           <div class="shift-text-content">
             <h1 class="ac-h1">Achievements</h1>
             <div class="in-content-ul">
@@ -291,7 +291,7 @@
         </div>
 
         <div class="col remove-mobile">
-          <img src="img/achievements2.jpeg" class="achievements-2">
+          <img src="img/Conrad_quote_image_explore.jpg" class="achievements-2">
         </div>
       </div>
     </div>
@@ -398,7 +398,7 @@
 
   <div class="row history content-2 exploreSection historyMobile" id="row4" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url({{doc.url}}) no-repeat center left fixed;">
     <div class="col-sm-2 remove-15-row remove-15-padding mobileSide">
-      <div class="col-sm-2 remove-15-row remove-15-padding redl2"></div>
+      <div class="col-sm-2 remove-15-row remove-15-padding redl2 heightfix-redl2"></div>
     </div>
 
     <div class="col-sm-10 content-buffer history-margin">
@@ -821,7 +821,7 @@
   <div class="col-sm-10 content-buffer quote-content">
     <div class="row">
       <div class="col">
-        <img src="img/achievements1.jpeg" class="achievements-1">
+        <img src="img/Conrad_quote_image_engage.jpg" class="achievements-1">
         <div class="speaking-div">
           {{entry.conradQuote}}
 
@@ -831,7 +831,7 @@
       </div>
 
       <div class="col">
-        <img src="img/achievements2.jpeg" class="achievements-2">
+        <img src="img/conrad_quote_image.jpg" class="achievements-2">
       </div>
     </div>
   </div>

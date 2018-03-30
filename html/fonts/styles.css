@@ -12,14 +12,27 @@ body{
 	font-family: 'proxima-nova', sans-serif;
 	position:fixed;
 	overflow-x: hidden;
-	overflow-y: hidden;
-	width:101%;
+	overflow-y: scroll;
+	width:100 %;
 	height:auto;
 	background-color: #212322 !important;
 }
 
 #mobile-history-show-1{
   display: none;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.6em;
+}
+
+.contact-list:hover {
+  cursor: pointer;
+}
+
+#contact-submit:hover{
+  cursor: pointer;
 }
 
 .historySelect{
@@ -68,6 +81,10 @@ body{
 .innerMobileRow{
 	height:50%;
 	width:100%;
+}
+
+.explore-click:hover, .engage-click:hover{
+  cursor: pointer;
 }
 
 #explore-mobile{
@@ -126,10 +143,6 @@ body{
 #engage:hover{
   background-image: url('/img/right-background.jpg'); 
 }
-
-/* #explore:hover{
-  background-image: url('/img/left-background.jpg'); 
-} */
 
 .top-home-row {
 	height:75%;
@@ -228,7 +241,9 @@ row4{
 }
 
 .text-link:hover{
-	color: #fe2246;
+  background-color: #fe2246;
+  color: white;
+  transition: 0.5s;
 }
 
 .engage-link, .explore-link {
@@ -301,7 +316,11 @@ row4{
 	cursor:pointer;
 }
 
-.explore-row-bottom:hover, .engage-row-bottom:hover{
+.outline-item:hover{
+  cursor: pointer;
+}
+
+.explore-row-bottom-left:hover, .engage-row-bottom-left:hover, .explore-row-bottom-right:hover, .engage-row-bottom-right:hover{
 	cursor:pointer;
 }
 
@@ -376,12 +395,12 @@ row4{
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     transform-origin: left top 0;
-    font-size: 0.3em;
+    font-size: 0.2em;
     letter-spacing: 0.1em;
-    padding-left: 0.5em;
-    margin-left: 1.6em;
+    padding-left: 1.5em;
+    margin-left: 2em;
     display: none;
-    width: 6em;
+    width: 7em;
     font-weight: 600;
 }
 
@@ -787,7 +806,6 @@ h2{
 .advocacy-img-right {
 	width:100% !important;
   position:relative;
-  padding-right: 0 !important;
 }
 
 .advocacy-mobile{
@@ -830,7 +848,7 @@ h2{
     border-bottom: 1px solid;
     border-color: #fe2246 !important;
     margin-bottom: 2em;
-    display: inline-block;
+    display: none;
     font-weight: 500;
     margin-top:1em;
     cursor: pointer;
@@ -1192,7 +1210,15 @@ h2{
 	top:0;
 	width:100%;
 	height:100%;
+  display: none;
+}
 
+.speech-container:hover .speech-mask{
+  display: block;
+}
+
+.speech-container:hover .watch-speech{
+  display: inline-block;
 }
 
 .history-p-width{
@@ -1616,7 +1642,7 @@ h2{
     }
   
     .redl{
-      width:12% !important;
+      width:5% !important;
     }
   }
 

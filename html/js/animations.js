@@ -4,7 +4,7 @@ function exploreScrollClicks() {
       scrollTop: $("#row1").offset().top - 49
     }, 500);
   });
-  $('#achivements-outline').on('click', function () {
+  $('#achievements-outline').on('click', function () {
     $('html, body').animate({
       scrollTop: $("#row2").offset().top - 49
     }, 500);
@@ -31,42 +31,58 @@ function exploreScrollClicks() {
   });
 }
 
+function contactOptions() {
+  $('.contact-option').on('click', function () {
+    $(this).attr('type', 'circle');
+    if ($(this).index() === 0) {
+      $('#co1').removeAttr('type')
+      $('#co2').removeAttr('type')
+    } if ($(this).index() === 1) {
+      $('#co0').removeAttr('type')
+      $('#co2').removeAttr('type')
+    } if ($(this).index() === 2) {
+      $('#co0').removeAttr('type')
+      $('#co1').removeAttr('type')
+    }
+  });
+};
+
 function engageScrollClicks() {
-    $('#about2-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row1a").offset().top - 49
-      }, 500);
-    });
-    $('#advocacy-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row2a").offset().top - 49
-      }, 500);
-    });
-    $('#speaking-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row3a").offset().top - 49
-      }, 500);
-    });
-    $('#filler-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row4a").offset().top - 49
-      }, 500);
-    });
-    $('#testimonials-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row5a").offset().top - 49
-      }, 500);
-    });
-    $('#coordinates-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row6a").offset().top - 49
-      }, 500);
-    });
-    $('#team-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row7a").offset().top - 49
-      }, 500);
-    });
+  $('#about2-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row1a").offset().top - 49
+    }, 500);
+  });
+  $('#advocacy-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row2a").offset().top - 49
+    }, 500);
+  });
+  $('#speaking-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row3a").offset().top - 49
+    }, 500);
+  });
+  $('#filler-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row4a").offset().top - 49
+    }, 500);
+  });
+  $('#testimonials-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row5a").offset().top - 49
+    }, 500);
+  });
+  $('#coordinates-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row6a").offset().top - 49
+    }, 500);
+  });
+  $('#team-outline').on('click', function () {
+    $('html, body').animate({
+      scrollTop: $("#row7a").offset().top - 49
+    }, 500);
+  });
 }
 
 function initializeContactPanel() {
@@ -183,35 +199,82 @@ function initializePanelClicks() {
 function bottomPanelClicks() {
   $('.explore-row-bottom-left').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
+    setTimeout(function(){
+      $('#engage').animate({width: "50%"}, 500);
+      $(".resize-bottom-engage").animate({ width: "50%" }, 500);
+      $(".engage-row").fadeIn();
+      $("#explore").animate({ width: "50%" }, 500, function () {
+        $('.rot-text-container').hide();
+        $('#engage').css( {height: "100%" })
+        $("#engage").show();
+        $(".exploreSection").hide();
+        $("body").css({ position: "static" });
+        $("body").css({ top: "0px" });
+        $("body").css({ height: "0px" });
+        $("body").css("overflow-y", "scroll");
+      });  
+    }, 601)
   });
 
   $('.engage-row-bottom-left').click(function () {
-    $('html, body').animate({ scrollTop: 0 });
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    setTimeout(function(){
+      $('#engage').animate({width: "100%"}, 500);
+      $(".resize-bottom-engage").animate({ width: "50%" }, 500);
+      $(".engage-row").fadeIn();
+      $('.explore-row').hide();
+      $("#explore").animate({ width: "0%" }, 500, function () {
+        $('.rot-text-container').hide();
+        $('#engage').css( {height: "100%" })
+        $("#engage").show();
+        $(".exploreSection").hide();
+        $('.engageSection').show();
+        $("body").css({ position: "static" });
+        $("body").css({ top: "0px" });
+        $("body").css({ height: "0px" });
+        $("body").css("overflow-y", "scroll");
+      });  
+    }, 601)  
   });
 
   $('.explore-row-bottom-right').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 0);
-    $("#engage").animate({ width: "0%" }, 500);
-    $(".resize-bottom-engage").animate({ width: "0%" }, 500);
-    $(".engage-row").fadeOut();
-    $("#explore").animate({ width: "100%" }, 500, function () {
-      $("#engage").css({ height: "0" });
-      $("#engage").hide();
-      $(".engageSection").hide();
-      $(".exploreSection").show();
-      $("body").css({ position: "static" });
-      $("body").css({ top: "0px" });
-      $("body").css({ height: "0px" });
-      $("body").css("overflow-y", "scroll");
-    });
-    $(".rot-text-container").fadeIn();
-    $(".explore-row .redl").addClass("redl-active");
-    $("#explore").css({ "background-image": "url('/img/left-background.jpg')" });
+    $('html, body').animate({ scrollTop: 0 }, 600);
+    setTimeout(function(){
+      $('#explore').animate({width: "100%"}, 500);
+      $(".resize-bottom-explore").animate({ width: "50%" }, 500);
+      $(".explore-row").fadeIn();
+      $('.engage-row').hide();
+      $("#engage").animate({ width: "0%" }, 500, function () {
+        $('.rot-text-container').hide();
+        $('#explore').css( {height: "100%" })
+        $("#explore").show();
+        $(".engageSection").hide();
+        $('.exploreSection').show();
+        $("body").css({ position: "static" });
+        $("body").css({ top: "0px" });
+        $("body").css({ height: "0px" });
+        $("body").css("overflow-y", "scroll");
+      });  
+    }, 601)  
   });
 
   $('.engage-row-bottom-right').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
-    
+    setTimeout(function(){
+      $('#explore').animate({width: "50%"}, 500);
+      $(".resize-bottom-explore").animate({ width: "50%" }, 500);
+      $(".explore-row").fadeIn();
+      $("#engage").animate({ width: "50%" }, 500, function () {
+        $('.rot-text-container').hide();
+        $('#explore').css( {height: "100%" })
+        $("#explore").show();
+        $(".engageSection").hide();
+        $("body").css({ position: "static" });
+        $("body").css({ top: "0px" });
+        $("body").css({ height: "0px" });
+        $("body").css("overflow-y", "scroll");
+      });  
+    }, 601)
   });
 
 
@@ -468,44 +531,63 @@ function instagramAjaxCall() {
 }
 
 function instagramWebFormat(data) {
-  let createdTimeOfPost = parseInt(data.data[5].created_time);
-  let dateCreated = new Date(createdTimeOfPost * 1000);
-  let day = dateCreated.getDate();
-  let month = dateCreated.getMonth() + 1;
-  let year = dateCreated.getFullYear().toString().substr(-2);
-  if (day < 10) {
-    day = "0" + day
-  }
-  let formattedDate = `${month}/${day}/${year}`
   var firstRow = "";
   var secondRow = "";
   var thirdRow = "";
   for (i = 0; i < 3; i++) {
-    let imgUrl = data.data[i].images.standard_resolution.url;
-    var toAdd = `<div class="col-sm-4 instagram-pic" style="background-image:url(${imgUrl});width:33vw;height:58vh;"></div>`;
-    firstRow += toAdd
-  } for (i = 3; i < 5; i++) {
-    let imgUrl = data.data[i].images.standard_resolution.url;
-    var toAdd = `<div class="col-sm-4 instagram-pic" style="background-image: url(${imgUrl});width:33vw;height:58vh;"></div>`;
-    secondRow += toAdd
-  } for (i = 5; i < 6; i++) {
+    let createdTimeOfPost = parseInt(data.data[i].created_time);
+    let dateCreated = new Date(createdTimeOfPost * 1000);
+    let day = dateCreated.getDate();
+    let month = dateCreated.getMonth() + 1;
+    let year = dateCreated.getFullYear().toString().substr(-2);
+    if (day < 10) {
+      day = "0" + day
+    }
+    let formattedDate = `${month}.${day}.${year}`
+  
     let caption = data.data[i].caption.text
     let imgUrl = data.data[i].images.standard_resolution.url;
     var toAdd =
       `<div class="col-sm-4 instagram-pic" style="background-image: url(${imgUrl});width:33vw;height:58vh;">
+      <div class="instagram-mask">
     <div class="tweet-content">
       <span class="tw-date">${formattedDate}</span>
       <span class="tw-handle">@conrad_anker</span>
       <p class="tw-text">${caption}</p> 
       <a target="_blank" href="https://www.instagram.com/conrad_anker/?hl=en" class="red-arrow-link">SEE MORE &rarr;</a>
     </div> 
+    </div>
     </div>`;
-    thirdRow += toAdd
+    firstRow += toAdd
+  } for (i = 3; i < 6; i++) {
+    let createdTimeOfPost = parseInt(data.data[i].created_time);
+    let dateCreated = new Date(createdTimeOfPost * 1000);
+    let day = dateCreated.getDate();
+    let month = dateCreated.getMonth() + 1;
+    let year = dateCreated.getFullYear().toString().substr(-2);
+    if (day < 10) {
+      day = "0" + day
+    }
+    let formattedDate = `${month}.${day}.${year}`
+    let caption = data.data[i].caption.text
+    let imgUrl = data.data[i].images.standard_resolution.url;
+    var toAdd =
+      `<div class="col-sm-4 instagram-pic" style="background-image: url(${imgUrl});width:33vw;height:58vh;">
+      <div class="instagram-mask">
+    <div class="tweet-content">
+      <span class="tw-date">${formattedDate}</span>
+      <span class="tw-handle">@conrad_anker</span>
+      <p class="tw-text">${caption}</p> 
+      <a target="_blank" href="https://www.instagram.com/conrad_anker/?hl=en" class="red-arrow-link">SEE MORE &rarr;</a>
+    </div> 
+    </div>
+    </div>`;
+    secondRow += toAdd
   }
   document.getElementById("engage-instagram").innerHTML = firstRow;
-  document.getElementById("engage-instagram-second-row").innerHTML = secondRow + thirdRow;
+  document.getElementById("engage-instagram-second-row").innerHTML = secondRow;
   document.getElementById("explore-instagram").innerHTML = firstRow;
-  document.getElementById("explore-instagram-second-row").innerHTML = secondRow + thirdRow;
+  document.getElementById("explore-instagram-second-row").innerHTML = secondRow;
 }
 
 function instagramMobileFormat(data) {
@@ -534,6 +616,7 @@ $(document).ready(() => {
   hoverFix();
   mobileMenuToggle();
   slideupContact();
+  contactOptions();
   $(window).on('beforeunload', function () {
     $(window).scrollTop(0);
   });
