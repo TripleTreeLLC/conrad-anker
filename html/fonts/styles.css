@@ -228,9 +228,7 @@ row4{
 }
 
 .text-link:hover{
-  background-color: #fe2246;
-  color: white;
-  transition: 0.5s;
+	color: #fe2246;
 }
 
 .engage-link, .explore-link {
@@ -303,11 +301,7 @@ row4{
 	cursor:pointer;
 }
 
-.outline-item:hover{
-  cursor: pointer;
-}
-
-.explore-row-bottom-left:hover, .engage-row-bottom-left:hover, .explore-row-bottom-right:hover, .engage-row-bottom-right:hover{
+.explore-row-bottom:hover, .engage-row-bottom:hover{
 	cursor:pointer;
 }
 

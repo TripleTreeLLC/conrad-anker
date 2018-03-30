@@ -51,8 +51,8 @@
         <img class="logo" src="img/logo.png">
       </a>
     </div>
-    <div class="col hamburger-col" id="close-hamburger">
-      <div id="menuToggle" class="menu-toggle">
+    <div class="col hamburger-col">
+      <div id="menuToggle" class="menu-toggle" onclick="expandMenu()">
         <div class="hamburger">
           <span class="s1"></span>
           <span class="s2"></span>
@@ -60,57 +60,8 @@
         </div>
       </div>
       <div class="side-nav">
-        <img class="contact-x-mobile" id="mobilex-a" src="img/x-close.png">
-        <div class="explore-nav-container">
-          <div class="mobile-nav-redl"></div>
-          <span class="explore-nav-link">Explore</span>
+          <h1 class="sidenav-content">Info here</h1>
         </div>
-        <div class="engage-nav-container">
-          <div class="mobile-nav-redl"></div>
-          <span class="engage-nav-link">Engage</span>
-        </div>
-        <div class="col social-container-drawer">
-          <div>
-            <a href="https://www.instagram.com/conrad_anker/" target="_blank">
-              <img src="img/social_instagram.png">
-            </a>
-          </div>
-          <div>
-            <a href="https://twitter.com/conradanker" target="_blank">
-              <img src="img/social_twitter.png">
-            </a>
-          </div>
-          <div>
-            <a href="https://www.facebook.com/ConradAnkerOfficial/" target="_blank">
-              <img src="img/social_facebook.png">
-            </a>
-          </div>
-        </div>
-        <div class="drawer-contact-button">
-          <div class="contact-fix">
-            <h2 style="color: white !important;">CONTACT</h2>
-          </div>
-        </div>
-        <div class="slideup-contact">
-          <img class="contact-x-mobile" id="mobilex-b" src="img/x-close.png">
-          <h1 class="contact-title" style="margin-bottom:1.2em;">Contact</h1>
-          <ul>
-            <li id="contact1" type="circle">Speaking Engagement</li>
-            <li id="contact2">Endorsement</li>
-            <li id="contact3">General Inquiry</li>
-          </ul>
-          <form id="contact-form">
-            <input type="text" name="email" id="contact-email" placeholder="Your email" />
-            <input type="text" name="subject" id="contact-subject" placeholder="Subject" />
-            <textarea name="message" class="message-box"></textarea>
-            </form>
-          <div class="drawer-send-button">
-            <div class="contact-fix">
-              <h2 style="color: white !important;">SEND</h2>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div class="col text-right contact-container">
       <a id="contact-link" class="text-link" href="#">CONTACT</a>
@@ -158,11 +109,11 @@
   <div class="row" id="home-row">
 
 
-    <div class="col explore-click" id="explore">
+    <div class="col" id="explore">
       <div class="row top-home-row remove-15-row"></div>
 
     </div>
-    <div class="col engage-click" id="engage">
+    <div class="col" id="engage">
       <div class="row top-home-row remove-15-row"></div>
 
     </div>
@@ -173,7 +124,7 @@
       <h1 class="contact-title" style="margin-bottom:1.2em;">Contact</h1>
 
       <ul>
-        <li>Speaking Engagement</li>
+        <li type="circle">Speaking Engagement</li>
         <li>Endorsement</li>
         <li>General Inquiry</li>
       </ul>
@@ -199,7 +150,7 @@
         </div>
 
         <div class="col-sm-10 explore-text align-items-center">
-          <span class="explore-link explore-click">EXPLORE</span>
+          <span class="explore-link">EXPLORE</span>
         </div>
       </div>
     </div>
@@ -208,7 +159,7 @@
       <div class="row bottom-home-row remove-15-row engage-row">
 
         <div class="col-sm-10 explore-text align-items-center">
-          <span class="engage-link engage-click">ENGAGE</span>
+          <span class="engage-link">ENGAGE</span>
         </div>
 
 
@@ -612,7 +563,7 @@
       <div class="col-sm-2 remove-15-row remove-15-padding redl-engage-bottom"></div>
 
       <div class="col-sm-10 explore-text align-items-center pad-mod">
-        <span class="explore-row-bottom-left explore-link final-ex-en pad-mod-left">EXPLORE</span>
+        <span class="explore-row-bottom explore-link final-ex-en pad-mod-left">EXPLORE</span>
       </div>
     </div>
   </div>
@@ -623,7 +574,7 @@
     <div class="row"></div>
     <div class="row" id="bottom-row" style="font-size:4em;">
       <div class="col-sm-10 remove-15-row remove-15-padding">
-        <span class="engage-row-bottom-left explore-link final-ex-en pad-mod-2">ENGAGE</span>
+        <span class="engage-row-bottom explore-link final-ex-en pad-mod-2">ENGAGE</span>
       </div>
       <div class="col-sm-2 remove-15-row remove-15-padding redl-engage-bottom"></div>
 
@@ -997,7 +948,7 @@
       <div class="col-sm-2 remove-15-row remove-15-padding redl-engage-bottom"></div>
 
       <div class="col-sm-10 explore-text align-items-center pad-mod">
-        <span class="explore-row-bottom-right explore-link final-ex-en pad-mod-left">EXPLORE</span>
+        <span class="explore-link final-ex-en pad-mod-left">EXPLORE</span>
       </div>
     </div>
   </div>
@@ -1008,7 +959,7 @@
     <div class="row"></div>
     <div class="row" id="bottom-row" style="font-size:4em;">
       <div class="col-sm-10 remove-15-row remove-15-padding">
-        <span class="engage-row-bottom-right explore-link final-ex-en pad-mod-2">ENGAGE</span>
+        <span class="explore-link final-ex-en pad-mod-2">ENGAGE</span>
       </div>
       <div class="col-sm-2 remove-15-row remove-15-padding redl-engage-bottom"></div>
 

@@ -1,73 +1,3 @@
-function exploreScrollClicks() {
-  $('#about-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row1").offset().top - 49
-    }, 500);
-  });
-  $('#achivements-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row2").offset().top - 49
-    }, 500);
-  });
-  $('#expeditions-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row3").offset().top - 49
-    }, 500);
-  });
-  $('#history-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row4").offset().top - 49
-    }, 500);
-  });
-  $('#tools-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row5").offset().top - 49
-    }, 500);
-  });
-  $('#press-outline').on('click', function () {
-    $('html, body').animate({
-      scrollTop: $("#row6").offset().top - 49
-    }, 500);
-  });
-}
-
-function engageScrollClicks() {
-    $('#about2-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row1a").offset().top - 49
-      }, 500);
-    });
-    $('#advocacy-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row2a").offset().top - 49
-      }, 500);
-    });
-    $('#speaking-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row3a").offset().top - 49
-      }, 500);
-    });
-    $('#filler-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row4a").offset().top - 49
-      }, 500);
-    });
-    $('#testimonials-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row5a").offset().top - 49
-      }, 500);
-    });
-    $('#coordinates-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row6a").offset().top - 49
-      }, 500);
-    });
-    $('#team-outline').on('click', function () {
-      $('html, body').animate({
-        scrollTop: $("#row7a").offset().top - 49
-      }, 500);
-    });
-}
 
 function initializeContactPanel() {
   $("#contact-link").click(function () {
@@ -107,7 +37,7 @@ function hoverFix() {
 
 
 function initializePanelClicks() {
-  $(".engage-click").click(function () {
+  $(".engage-row").click(function () {
     $("#explore").animate({ width: "0%" }, 500);
     $(".resize-bottom-explore").css({ position: 'absolute' });
     $(".resize-bottom-explore").animate({ width: "0" }, 500);
@@ -128,7 +58,7 @@ function initializePanelClicks() {
     $("#engage").css({ "background-image": "url('/img/right-background.jpg')" });
   });
 
-  $(".explore-click").click(function () {
+  $(".explore-row").click(function () {
     $("#engage").animate({ width: "0%" }, 500);
     $(".resize-bottom-engage").animate({ width: "0%" }, 500);
     $(".engage-row").fadeOut();
@@ -181,16 +111,18 @@ function initializePanelClicks() {
 }
 
 function bottomPanelClicks() {
-  $('.explore-row-bottom-left').click(function () {
+  console.log('pewp');
+  $('.explore-row-bottom').click(function () {
     $('html, body').animate({ scrollTop: 0 }, 600);
+    return false;
   });
 
-  $('.engage-row-bottom-left').click(function () {
-    $('html, body').animate({ scrollTop: 0 });
+  $('.engage-row-bottom').click(function () {
+    $('html, body').animate({ scrollTop: 0}, 600);
+    return false;
   });
 
-  $('.explore-row-bottom-right').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 0);
+  $('fake-div').click(function () {
     $("#engage").animate({ width: "0%" }, 500);
     $(".resize-bottom-engage").animate({ width: "0%" }, 500);
     $(".engage-row").fadeOut();
@@ -208,13 +140,6 @@ function bottomPanelClicks() {
     $(".explore-row .redl").addClass("redl-active");
     $("#explore").css({ "background-image": "url('/img/left-background.jpg')" });
   });
-
-  $('.engage-row-bottom-right').click(function () {
-    $('html, body').animate({ scrollTop: 0 }, 600);
-    
-  });
-
-
 
 }
 
@@ -336,13 +261,16 @@ function initHistorySection() {
 }
 
 function initHistorySectionMobile() {
+  console.log('aaaaa')
   if ($(window).width() <= 1096) {
+    console.log('bbbbbb')
     $('#mobile-history-show-1').show();
   }
-  $('.mobile-history-select').change(function () {
-    $('.history-content-mobile').hide();
-    $('#' + $(this).val()).show();
-  })
+    $('.mobile-history-select').change(function () {
+      console.log('ccccccc')
+      $('.history-content-mobile').hide();
+      $('#' + $(this).val()).show();
+    })
 }
 
 function pressChange(itemIdx) {
@@ -427,33 +355,10 @@ function modalPopover() {
   });
 }
 
-function mobileMenuToggle() {
-  $('.menu-toggle').on('click', function () {
-    $(".menu-toggle").css("pointer-events", "none");
-    $("span.s1").hide();
-    $("span.s2").hide();
-    $("span.s3").hide();
-    $('.side-nav').width('100vw');
-  })
-  $("#mobilex-a").on('click', function () {
-    $('.side-nav').width('0');
-    $("span.s1").show();
-    $("span.s2").show();
-    $("span.s3").show();
-    $(".menu-toggle").css("pointer-events", "auto");
-  })
-}
-
-function slideupContact() {
-  $('.drawer-contact-button').on('click', function () {
-    $("#mobilex-a").css("pointer-events", "none");
-    $('.slideup-contact').height('100vh');
-    $('.drawer-send-button').height('9vh')
-  });
-  $("#mobilex-b").on('click', function () {
-    $("#mobilex-a").css("pointer-events", "auto");
-    $(".slideup-contact").css("height", "0");
-    $('.drawer-send-button').height('0')
+function menuToggle(){
+  $('.menu-toggle').on('click',function(){
+    $('.menu-toggle').toggleClass('active');
+    $('.top').toggleClass('expanded');
   });
 }
 
@@ -520,8 +425,6 @@ function instagramMobileFormat(data) {
 }
 
 $(document).ready(() => {
-  exploreScrollClicks();
-  engageScrollClicks();
   instagramAjaxCall();
   initializePanelClicks();
   bottomPanelClicks();
@@ -532,8 +435,7 @@ $(document).ready(() => {
   initPressScroller();
   modalPopover();
   hoverFix();
-  mobileMenuToggle();
-  slideupContact();
+  menuToggle();
   $(window).on('beforeunload', function () {
     $(window).scrollTop(0);
   });

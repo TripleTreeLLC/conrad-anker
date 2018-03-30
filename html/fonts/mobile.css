@@ -28,7 +28,6 @@
   }
 
 
-
   /*-------------------------------------------------------*/
 
   .hamburger-col{
@@ -42,7 +41,7 @@
     border: 0px solid rgb(15,15,15);
     cursor: pointer;
     position: absolute;
-    z-index: 10;
+    z-index: 99;
     margin-left: 35vw;
     margin-top: 4vh;
     transition: background-color 0.3s ease;
@@ -193,8 +192,6 @@
   transition: 0.5s;
   bottom: 0;
   right: 0;
-  font-weight:bold;
-	color: #fff;
 }
 
 .contact-x-mobile{
@@ -204,49 +201,7 @@
 	width:1.3em;
 	height:1.3em;
   cursor:pointer;
-  z-index: 50;
-}
-
-#mobilex-a{
-  z-index: 80 !important;
-}
-
-#mobilex-a{
-  z-index: 90 !important;
-}
-
-.slideup-contact input, .slideup-contact textarea {
-  background-color: #35363b;
-  border: 0;
-  padding: 0.4em;
-  font-weight: 450;
-  display: block;
-  margin-bottom: 1.8em;
-  width: 90%;
-  font-size: 1.15em;
-  padding-left: 1em;
-  padding-bottom: 0.5em;
-}
-
-.slideup-contact ul li {
-  margin-left: 11vw;
-	margin-bottom: 0.4em;
-    font-size: 1.25em;
-    font-weight: 350;
-}
-
-.slideup-contact h1{
-  margin-top: 2em;
-  margin-left: 1.5em;
-  font-weight: 700;
-  font-size: 2.3em;
-  letter-spacing: 1px;
-}
-
-#contact-form{
-  margin-left: 8vw;
-  height: 49vh;
-  overflow-y: hidden;
+  z-index: 100;
 }
 
 /*-------------------------------------------------------*/
